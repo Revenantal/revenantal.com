@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>Ship Viewer WIP</title>
+		<link rel="stylesheet" type="text/css" href="src/css/main.css">
+    </head>
+    <body>
+	
+		<div id="ship-view">
+			<canvas id="shipViewer"></canvas>
+			<div id="ship-Loading-Status">LOADING<br><span id="load-percent">0%</span></div>
+		</div>
+		
+		<div id="station-menu">
+			<div class="station-row station-vertical-align " style="height:150px; text-align:center;">
+				<div class="station-column-1-1">
+					<img src="https://i.imgur.com/e2a5e0z.gif" height="120px"></img>
+				</div>
+			</div>
+			<div class="station-row" style="height:70px; text-align:center;">
+				<div class="station-column-1-2">
+					<div class="undock-button">
+						<img src="img/left-arrows-cyan.png"></img>
+						<span>Placeholder</span>
+					</div>
+				</div>
+				<div class="station-column-1-2">
+					<div class="undock-button">
+						<img onclick="toggleMenu()" src="img/right-arrows-yellow.png"></img>
+						<span>Hide Menu</span>
+					</div></div>
+			</div>
+			<div class="station-row" style="height:140px">
+				<div class="station-column-1-1">
+					<p>Settings?</p>
+				</div>
+			</div>
+			<div class="station-row station-vertical-align" style="height:45px; text-align:center;">
+				<div class="station-column-1-4"><button class="eve-button" style="width:98%;">Button 1</button></div>
+				<div class="station-column-1-4"><button class="eve-button" style="width:98%;">Button 2</button></div>
+				<div class="station-column-1-4"><button class="eve-button" style="width:98%;">Button 3</button></div>
+				<div class="station-column-1-4"><button class="eve-button" style="width:98%;">Button 4</button></div>
+			</div>
+			<div class="station-row" style="height: calc( 100% - 405px); padding-left:0px; padding-right:0px; padding-bottom:0px;">
+				<div class="station-column-1-1" style="display:flex; flex-direction: column;">
+					<div class="tab-group" id="object-tab-group">
+						<!--<button class="eve-button eve-tab-button eve-tab-button-active">Tab 1</button><button class="eve-button eve-tab-button">Tab 2</button><button class="eve-button eve-tab-button">Tab 3</button><button class="eve-button eve-tab-button last">Tab 4</button>-->
+					</div>
+					<div class="object-list-controls">
+						<form>
+							<input type="text" name="search" value="Filter">
+						</form>
+					</div>
+					<div class="object-list" id="object-list">
+					<!--	<div class="object-item"><img src="img/renders/38_64.png"><p>Caldari Navy Raven</p></div>
+						<div class="object-item active"><img src="img/renders/38_64.png"><p>Caldari Navy Raven</p></div>-->
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="hidden-menu" onclick="toggleMenu()">
+			<
+		</div>
+	
+    </body>
+	<script type="text/javascript" src="src/js/external/glMatrix-0.9.5.min.js"></script>
+	<script type="text/javascript" src="src/js/ccpwgl_int.js"></script>
+	<script type="text/javascript" src="src/js/MainCamera.js"></script>
+	<script type="text/javascript" src="src/js/ccpwgl.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script type="text/javascript" src="src/js/js-yaml.min.js"></script>
+	<script type="text/javascript" src="src/js/loadObjectList.js"></script>
+	<script type="text/javascript" src="src/js/generateObject.js"></script>
+	<script type="text/javascript" src="src/js/uiControls.js"></script>		
+	<script type="text/javascript">
+	/*
+LoadTypeID = function (typeID)
+{
+    // Get data from Fuzzy McFuzzFace
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open('GET', 'https://www.fuzzwork.co.uk/api/sofapi.php?endpoint=BASICDATA&typeid=' + typeID, true);
+    xmlhttp.onreadystatechange = function ()
+    {
+        if (xmlhttp.readyState == 4)
+        {
+            if (xmlhttp.status == 200)
+            {
+                var data = JSON.parse(xmlhttp.responseText);
+                onDataLoaded(typeID, data[0]);
+            }
+        }
+    };
+    xmlhttp.send(null);
+}
+	*/
+	
+	
+	buildObjectList();
+	
+	
+	
+	</script>
+</html>

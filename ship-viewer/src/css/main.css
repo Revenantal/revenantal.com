@@ -1,0 +1,262 @@
+/*********************************************************************************************************
+
+		MISC STYLES
+
+*********************************************************************************************************/
+
+@font-face {
+    font-family: eve;
+    src: url(../fonts/EveSans.ttf);
+}
+
+
+* {
+	box-sizing:border-box;
+	outline:0;
+	overflow:hidden;
+}
+
+body {
+	margin:0px;
+	font-family: eve;
+	font-size:12px;
+	color:#C5C5C5;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+ 
+::-webkit-scrollbar-track {
+   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+}
+ 
+::-webkit-scrollbar-thumb {
+    background-color:rgba(50,50,50,.4); 
+}
+
+/*********************************************************************************************************
+
+		BUTTON STYLES
+
+*********************************************************************************************************/
+
+.eve-button {
+	color:#C5C5C5;
+	background-color:rgba(40,40,40,1);
+	border: 1px solid rgb(48,48,48);
+	padding:10px;
+	transition: background-color 0.1s ease;
+	box-shadow: inset 0px 0px 20px .1px rgba(50,50,50,0.5)
+}
+
+.eve-button:hover {
+	background-color:rgba(60,60,60,1);
+	cursor: pointer;
+}
+
+.eve-tab-button {
+	border: none;
+	background-color:rgba(0,0,0,1);
+	border-right:1px #222 solid;
+}
+
+.eve-button.eve-tab-button.last {
+	border-right:none;
+}
+
+
+.eve-tab-button-active {
+	background-color:rgba(60,60,60,1);
+}
+
+
+/*********************************************************************************************************
+
+		STATION MENU STYLES
+
+*********************************************************************************************************/
+
+#station-menu, #ship-view, #ship-view canvas {
+	height:100vh;
+	display:inline-block;
+}
+
+#station-menu {
+	width: 425px;
+	background-color:rgba(30,30,30,0.85);
+	float:right;
+	border: 1px solid rgb(48,48,48);
+	position:absolute; 
+	top:0px; 
+	left: calc(100vw - 425px); 
+	transition: margin-left 1s ease-in-out;
+	-moz-transition: margin-left 1s ease-in-out; /* Firefox 4 */
+	-webkit-transition: margin-left 1s ease-in-out; /* Safari and Chrome */
+	-o-transition: margin-left 1s ease-in-out; /* Opera */
+	z-index:20;
+}
+
+#station-menu.hide {
+	margin-left: 425px; 
+}
+
+.station-row {
+	width:100%;
+	min-height:40px;
+	display:flex;
+	padding:5px;
+}
+.station-column-1-1 {
+	width:100%;
+}
+.station-column-1-2 {
+	width:50%;
+}
+.station-column-1-4 {
+	width:25%;
+}
+.station-vertical-align {
+	align-items: center;
+    justify-content: center;
+}
+
+.tab-group {
+	border-bottom: 1px solid rgb(48,48,48);
+	flex: 0 0 auto;
+}
+
+.tab-group .eve-button {
+	padding:5px 8px;
+}
+
+.object-list-controls {
+	padding-top:4px;
+	padding-bottom:2px;
+	padding-right:3px;
+	text-align:right;
+	flex: 0 0 auto;
+}
+
+.object-list-controls input {
+	border: 1px solid rgb(48,48,48);
+	background-color: rgba(40,40,40,0.4);
+	padding-left:4px;
+	color:rgba(197,197,197,0.7);
+	width:125px;
+}
+
+.object-list {
+	margin:2px;
+	border: 1px solid rgb(48,48,48);
+	flex: 1 1 auto;
+	background-color: rgba(40,40,40,0.4);
+	padding: 9px;
+	overflow-y: auto;
+}
+
+.object-list .object-item {
+	display: inline-block;
+	text-align: center;
+	padding:4px;
+	padding: 4px 5px;
+	height:104px;
+	margin:2px;
+}
+.object-item.hide{
+	display: none;
+}
+
+.object-list .object-item:hover {
+	background-color: rgba(100,100,100, 0.2);
+}
+
+.object-list .object-item.active {
+	background-color: rgba(6,46,6, 0.6);
+	border:1px solid rgb(17, 96,26);
+	padding: 3px 4px;
+}
+
+.object-list .object-item img {
+	height:64px;
+	width:64px;
+	margin-bottom:2px;
+}
+
+.object-list .object-item p {
+	width:64px;
+	margin:0px;
+	margin-bottom:2px;
+}
+
+
+.undock-button span{
+	display:block;
+}
+
+
+
+/*********************************************************************************************************
+
+		SHIP VIEW STYLES
+
+*********************************************************************************************************/
+
+#ship-view {
+	background-color:#000;
+	margin-left:-425px; 
+	width: calc(100% + 425px);
+	transition: margin-left 1s ease-in-out;
+	-moz-transition: margin-left 1s ease-in-out; /* Firefox 4 */
+	-webkit-transition: margin-left 1s ease-in-out; /* Safari and Chrome */
+	-o-transition: margin-left 1s ease-in-out; /* Opera */
+}
+
+#ship-view.fullscreen{
+	margin-left:-100px; 
+}
+
+#ship-view canvas {
+	width: 100%;
+}
+ 
+#ship-Loading-Status {
+	top: 50%;
+    position: absolute;
+    left: calc(50% - 225px);
+    color: white;
+    text-align: center;
+	font-size:22px;
+}
+ 
+ 
+ /*********************************************************************************************************
+
+		HIDDEN MENU STYLES
+
+*********************************************************************************************************/
+ 
+.hidden-menu {
+	top: calc(50% - 50px);
+    right: 20px;
+    position: absolute; 
+	opacity:0;
+	color:#ccc;
+	font-size: 100px;
+    line-height: 100px;
+	
+	transition: opacity .3s ease-in-out;
+	-moz-transition: opacity .3s ease-in-out; /* Firefox 4 */
+	-webkit-transition: opacity .3s ease-in-out; /* Safari and Chrome */
+	-o-transition: opacity .3s ease-in-out; /* Opera */
+	z-index:10;
+}
+.hidden-menu.visible {
+	transition: opacity 1s ease-in-out .5s;
+	-moz-transition: opacity 1s ease-in-out .5s; /* Firefox 4 */
+	-webkit-transition: opacity 1s ease-in-out .5s; /* Safari and Chrome */
+	-o-transition: opacity 1s ease-in-out .5s; /* Opera */
+	
+	opacity:1;
+}
+ 

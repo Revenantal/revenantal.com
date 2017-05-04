@@ -1,0 +1,54 @@
+html {
+	overflow:hidden;
+}
+
+body {
+	height:100%;
+	width:100%;
+	margin:0;
+	background-color:black;
+}
+/*
+.corpse .color0 {
+	background-image: url(../img/corpse1.png);
+	width: 512px; 
+	height: 512px; 
+	background-size: cover;
+}
+.corpse .color1{
+	background-image: url(../img/corpse2.png);
+	width: 512px; 
+	height: 512px; 
+	background-size: cover;
+}
+*/
+.audio-control {
+	position:absolute;
+	bottom:20px;
+	right:50px;
+	font-size: 100px;
+    color: white;
+	width:100px;
+	height:100px;
+}
+
+div#bg {
+	height:100%;
+	width:100%;
+	margin:0;
+	background-color:black;
+	background-image: url(../img/bg.jpg);
+	background-size: cover;
+}
+
+.male-corpse, .female-corpse {
+	width:100px;
+	height:100px;
+	background-size: cover;
+	background-image: url("../img/corpse-male.png");
+	position:absolute;
+}
+
+.female-corpse {
+	background-image: url("../img/corpse-female.png");
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Jay Wright</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<style>
+body{ margin:0px; background:#000; overflow:hidden; }
+#bg_container{ height:100%;}
+#bg{ height:100vh; width:100vw; }
+#content{ 
+	position:absolute; 
+	top:0px; 
+	padding:30px; 
+	color:#FFF; 
+	text-shadow:#000 2px 2px; 
+    padding: 20px; 
+
+	background: rgba(0,0,0, 0.5); 
+	padding:20px;
+    border-radius: 10px;
+	border: 1px solid rgba(255,76,255, 0.3);
+	text-align: center;
+
+
+    top: 80%;
+    left: 50%;
+    width:30em;
+    height:12em;
+    margin-top: -6em; /*set to a negative number 1/2 of your height*/
+    margin-left: -15em; /*set to a negative number 1/2 of your width*/
+    position:fixed;
+	
+}
+
+
+</style>
+</head>
+<body>
+<div id="bg_container">
+  <iframe id="bg" src="https://www.youtube.com/embed/e4PN41mYsb0?autoplay=1&controls=0&loop=1&showinfo=0&modestbranding=1&disablekb=1&enablejsapi=1&playlist=e4PN41mYsb0" frameborder="0"></iframe>
+</div>
+<div id="content">
+  <h2>Ships destroyed with awesome dance moves:</h2>
+  <h1><span id="totalShips"></span></h1>
+  <p><small>Jay Wright is THE dance commander.</small></p>
+   <p><small>Slapped together by Yipcool</small></p>
+</div>
+</body>
+<script>
+
+ $( document ).ready(function(){	
+	var zkill = $.ajax({type: "GET", url: "https://zkillboard.com/api/stats/characterID/212945968/", async: false}).responseText;
+	var json = JSON.parse(zkill);
+	$('#totalShips').html(json['shipsDestroyed']);
+
+ 
+ 
+
+ 
+ 
+// Perform other work here ...
+
+});
+</script>
+</html>

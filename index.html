@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+ 
+    <style>
+	* {
+		overflow:hidden;
+		font-family: 'Open Sans', sans-serif;
+	}
+	
+	html {
+		background-color:#000;
+		color:white;
+	}
+	a{	
+		color:white;
+	}
+	a:visited {
+		color:#999;
+	}
+	
+    #button {
+        width:100px;
+        height:50px;
+        position:absolute;
+    top:calc(50% - 25px);
+        left:calc(50% - 50px);
+		font-size: 16px;
+		text-align: center;
+		transition: all .25s ease;
+		font-weight:bold;
+    }
+ 
+    </style>
+</head>
+<body>
+	<h2>Gaming Stuff</h2>
+	<p><a href="/fs15">Farming Simulator 2015</a></p>
+	<h2>Pet Projects</h2>
+	<p><a href="/ship-viewer">Ship-viewer WIP</a></p>
+	<p><a href="/ship-demos/demos">CCPWGL Demos</a></p>
+	<p><a href="/jay">Jay Wright Mockery</a></p>
+	<p><a href="http://www.jordansbutton.com">Jordan's Button</a></p>
+	<p><a href="/dickbutt-army">Dickbutt Army</a></p>
+ 
+    <p id="button">Click here to view website</p>
+
+<script>
+    var button = document.getElementById("button");
+    var browserWidth = window.innerWidth || document.documentElement.clientWidth;
+    var browserHeight = window.innerHeight || document.documentElement.clientHeight;
+    var buttonWidth = button.offsetWidth;
+    var buttonHeight = button.offsetHeight;
+	
+	var red = 0;
+	var blue = 0;
+	var green = 0;
+ 
+    function move() {
+	
+		red = Math.floor(Math.random() * (255 - 0 + 1));
+		blue = Math.floor(Math.random() * (255 - 0 + 1));
+		green = Math.floor(Math.random() * (255 - 0 + 1));
+
+        button.style.left = Math.floor(Math.random()*(browserWidth-buttonWidth)) + "px";
+        button.style.top = Math.floor(Math.random()*(browserHeight-buttonHeight)) + "px";
+		button.style.color = "rgb(" + red + "," + green + "," + blue + ")";
+		console.log("rgb(" + red + "," + green + "," + blue + ")");
+		
+    }
+ 
+    if(typeof addEventListener !== "undefined") {
+        button.addEventListener("mouseover", move, false);
+    } else if (typeof attachEvent !== "undefined") {
+        button.attachEvent("onmouseover", move);
+    } else {
+        button.onmousover = move;
+    }
+ 
+</script>
+</body>

@@ -1,0 +1,109 @@
+<html>
+<head>
+	<title>It's Raining Corpses!</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script src="https://use.fontawesome.com/8410276bb3.js"></script>
+</head>
+<body>
+
+	<div id="bg"></div>
+	
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="js/objectFall.js"></script>
+	<script type="text/javascript" src="js/howler.core.js"></script>
+	
+	<script type="text/javascript">
+		$(function() {
+			
+			var bg = $("#bg");
+			var bgWidth = $("#bg").width();
+			var bgHeight = $("#bg").height();
+			var corpseCount = 0;
+			
+			
+			$( "#bg" ).click(function() {
+			  newCorpse();
+			});
+
+			
+
+			
+			function newCorpse() {
+				var minHeight = 50;
+				var maxHeight = 200;
+				var height = Math.floor(getRandomNum(minHeight,maxHeight));
+				var xPos = 0;
+				var yPos = 0 - (height);
+				var minSpeed = 10;
+				var maxSpeed = 4;
+				var speed = getRandomNum(minSpeed,maxSpeed);
+			
+				xPos = getRandomNum(0, bgWidth);
+				
+				corpseCount++;
+				
+				bg.append('<div id="corpse-' + corpseCount + '" class="male-corpse" style="top:'+yPos+'px; left:'+xPos+'px; height:'+height+'px; width:'+height+'px; z-index:'+height+';"></div>');
+				var $corpse = $('#corpse-' + corpseCount);
+
+				$corpse.animate({top:bgHeight}, speed*1000, "linear", function() {
+					$corpse.remove();
+					newCorpse();
+				});
+			}
+			
+			function getRandomNum(min, max) {
+			  return Math.random() * (max - min) + min;
+			}
+			
+			/*$('.corpse .animationwrapper').skyfall({ 
+				kinds: 2,
+				speed: 1, 
+				minSpeed: 0.2, 
+				rotation: 60, 
+				fps: 1,
+				varySpin: 1,
+				xStrafeMod: 0,
+				numberOfObjects: 20
+			});*/
+				
+			
+						
+			//$('#bg').objectFall();
+			
+			
+			
+			
+			
+			
+			
+		/*
+			var songs = ['audio/Drowning-Pool-Bodies.mp3', 'audio/Its-Raining-Men.mp3', 'audio/Queen-Another-One-Bites-The Dust.mp3'];
+			
+			var song = songs[Math.floor(Math.random()*songs.length)];
+		
+			var sound = new Howl({
+			  src: [song],
+			  autoplay: true,
+			  loop: true,
+			  volume: 0.3
+			});
+
+			
+	
+			$('#mute').click(function () {
+				if (sound.playing()){
+					sound.pause();
+					$('#mute').toggleClass('fa-volume-up fa-volume-off');
+				} else {
+					sound.play();
+					$('#mute').toggleClass('fa-volume-off fa-volume-up');
+				}
+
+			}); 
+			*/
+		});
+
+	</script>
+	
+</body>
+</html>
